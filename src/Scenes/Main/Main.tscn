@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjta7xgorpjno"]
+
+[ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
+[ext_resource type="PackedScene" uid="uid://b0bp55t44lqov" path="res://Scenes/RPaddle/RPaddle.tscn" id="3_cmk6n"]
+[ext_resource type="PackedScene" uid="uid://bw44582byoudt" path="res://Scenes/LPaddle/LPaddle.tscn" id="4_i3fi7"]
+[ext_resource type="PackedScene" uid="uid://c5pgnbaoaocol" path="res://Scenes/Ball/Ball.tscn" id="5_7npjy"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_o8wgc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(809, 467)
+
+[node name="Ball" parent="." instance=ExtResource("5_7npjy")]
+position = Vector2(317, 619)
+
+[node name="RPaddle2" parent="." instance=ExtResource("3_cmk6n")]
+position = Vector2(392, 821)
+
+[node name="LPaddle" parent="." instance=ExtResource("4_i3fi7")]
+position = Vector2(128, 819)

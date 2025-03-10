@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw44582byoudt"]
+
+[ext_resource type="Script" uid="uid://b2ujd4w0y3004" path="res://Scenes/LPaddle/l_paddle.gd" id="1_teokm"]
+[ext_resource type="Texture2D" uid="uid://d4kqp51lhguhm" path="res://Assets/Hinata.jpg" id="2_4mlp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u25w7"]
+size = Vector2(111.698, 18.4527)
+
+[node name="LPaddle" type="Node2D"]
+
+[node name="LPaddle" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+center_of_mass_mode = 1
+can_sleep = false
+script = ExtResource("1_teokm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LPaddle"]
+position = Vector2(49.3085, 26.6416)
+rotation = 0.47822
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_u25w7")
+
+[node name="Sprite2D" type="Sprite2D" parent="LPaddle"]
+position = Vector2(49.7642, 27.1781)
+rotation = 0.47822
+scale = Vector2(0.0586068, 0.0193693)
+texture = ExtResource("2_4mlp6")
