@@ -1,3 +1,50 @@
-[gd_scene format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=7 format=3 uid="uid://cjta7xgorpjno"]
+
+[ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scripts/main.gd" id="1_r150o"]
+[ext_resource type="Texture2D" uid="uid://8b83ho5cr88d" path="res://Assets/Gold_Ball.png" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://bo3xb4ke1njis" path="res://Scripts/r_paddle.gd" id="3_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://d4kqp51lhguhm" path="res://Assets/Hinata.jpg" id="3_rgh2o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pbw6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1gob"]
+size = Vector2(272, 38)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_r150o")
+
+[node name="Ball2" type="RigidBody2D" parent="."]
+position = Vector2(312, 542)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2"]
+position = Vector2(-8, -5)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_pbw6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball2/CollisionShape2D"]
+position = Vector2(0.399986, 0)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_kln2b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(809, 467)
+
+[node name="RPaddle" type="RigidBody2D" parent="."]
+position = Vector2(515, 792)
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+center_of_mass_mode = 1
+can_sleep = false
+script = ExtResource("3_pbw6q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RPaddle"]
+position = Vector2(-121, 64)
+rotation = -0.47822
+shape = SubResource("RectangleShape2D_v1gob")
+
+[node name="Sprite2D" type="Sprite2D" parent="RPaddle/CollisionShape2D2"]
+position = Vector2(0.190883, -0.209558)
+scale = Vector2(0.142422, 0.0344532)
+texture = ExtResource("3_rgh2o")
