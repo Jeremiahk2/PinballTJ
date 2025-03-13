@@ -9,6 +9,7 @@ size = Vector2(111.698, 18.4527)
 [node name="LPaddle" type="Node2D"]
 
 [node name="LPaddle" type="RigidBody2D" parent="."]
+rotation = 0.47822
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
@@ -17,13 +18,10 @@ can_sleep = false
 script = ExtResource("1_teokm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LPaddle"]
-position = Vector2(49.3085, 26.6416)
-rotation = 0.47822
-scale = Vector2(1, 1)
+position = Vector2(56, 0)
 shape = SubResource("RectangleShape2D_u25w7")
 
 [node name="Sprite2D" type="Sprite2D" parent="LPaddle"]
-position = Vector2(49.7642, 27.1781)
-rotation = 0.47822
+position = Vector2(56, 0)
 scale = Vector2(0.0586068, 0.0193693)
 texture = ExtResource("2_4mlp6")

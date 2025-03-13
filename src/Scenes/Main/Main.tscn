@@ -15,7 +15,7 @@ position = Vector2(809, 467)
 position = Vector2(317, 619)
 
 [node name="RPaddle2" parent="." instance=ExtResource("3_cmk6n")]
-position = Vector2(392, 821)
+position = Vector2(392, 819)
 
 [node name="LPaddle" parent="." instance=ExtResource("4_i3fi7")]
 position = Vector2(128, 819)
