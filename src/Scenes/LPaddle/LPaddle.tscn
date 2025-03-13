@@ -15,6 +15,7 @@ collision_mask = 2
 gravity_scale = 0.0
 center_of_mass_mode = 1
 can_sleep = false
+angular_damp_mode = 1
 script = ExtResource("1_teokm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LPaddle"]
@@ -22,6 +23,6 @@ position = Vector2(56, 0)
 shape = SubResource("RectangleShape2D_u25w7")
 
 [node name="Sprite2D" type="Sprite2D" parent="LPaddle"]
-position = Vector2(56, 0)
-scale = Vector2(0.0586068, 0.0193693)
+position = Vector2(56.0853, -0.00124241)
+scale = Vector2(0.0582332, 0.0169796)
 texture = ExtResource("2_4mlp6")

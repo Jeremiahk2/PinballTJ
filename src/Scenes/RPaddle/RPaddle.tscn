@@ -19,10 +19,10 @@ angular_damp_mode = 1
 script = ExtResource("1_24c3a")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RPaddle"]
-position = Vector2(-57, 0)
+position = Vector2(-56.356, 0.0732085)
 shape = SubResource("RectangleShape2D_h4wnc")
 
 [node name="Sprite2D" type="Sprite2D" parent="RPaddle"]
-position = Vector2(-57, 1.90735e-06)
-scale = Vector2(0.0586068, 0.0193693)
+position = Vector2(-56.2249, 0.0938864)
+scale = Vector2(0.0582777, 0.0171903)
 texture = ExtResource("2_2wi17")
