@@ -4,16 +4,16 @@ extends RigidBody2D
 var paddleVelocity = 8;
 
 func _ready():
-	print(startingRotation);
-	print(transform.get_rotation());
+	pass;
 
 func _physics_process(delta: float):
-	print(transform.get_rotation());
 	var pressed = false;
 	angular_velocity = -paddleVelocity;
+	#Paddle is at rest, don't move down.
 	if transform.get_rotation() <= startingRotation:
 		angular_velocity = 0;
 	if Input.is_action_pressed("ui_right"):
 		angular_velocity = paddleVelocity;
+		#Don't move paddle up if at boundary.
 		if transform.get_rotation() >= -startingRotation:
 			angular_velocity = 0;
