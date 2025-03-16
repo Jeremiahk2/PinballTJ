@@ -72,7 +72,7 @@ position = Vector2(174, 1.80006e-05)
 scale = Vector2(0.094832, 0.231863)
 texture = ExtResource("6_w20t6")
 region_enabled = true
-region_rect = Rect2(0, 0, 9300.45, 170.644)
+region_rect = Rect2(0, 0, 9295.72, 170.644)
 metadata/_edit_lock_ = true
 
 [node name="TopWall" type="StaticBody2D" parent="."]

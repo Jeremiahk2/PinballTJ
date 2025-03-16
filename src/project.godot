@@ -23,3 +23,7 @@ window/size/viewport_height=960
 [layer_names]
 
 2d_physics/layer_7="PaddleBoundaries"
+
+[physics]
+
+common/physics_ticks_per_second=120
