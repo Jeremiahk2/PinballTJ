@@ -3,7 +3,7 @@ extends Line2D
 
 func _process(delta):
     add_point(get_parent().global_position)
-    if points.size() > 15:
+    if points.size() > 30:
         remove_point(0)
 
 
