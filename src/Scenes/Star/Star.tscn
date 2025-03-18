@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4k5ev7ig031x"]
+
+[ext_resource type="Texture2D" uid="uid://bg4qcg0xmnr3v" path="res://Assets/ninja_star.png" id="1_cnfwl"]
+[ext_resource type="Script" uid="uid://dnb5wsa41aq85" path="res://Scenes/Star/star.gd" id="1_wg4y8"]
+
+[node name="Star" type="Node2D"]
+
+[node name="Star" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+angular_damp_mode = 1
+script = ExtResource("1_wg4y8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Star"]
+scale = Vector2(0.224499, 0.208412)
+polygon = PackedVector2Array(-0.700012, -399.4, -3, -398.3, -3, -396.8, -3.79999, -396, -5.39999, -396, -72.4, -223, -74.4, -223, -72, -210.6, -72, -207.6, -46.5, -140.3, -57, -99.3, -57, -95.9, -69.7, -85, -71.9, -85, -95, -57.7, -140.1, -46, -141.6, -46, -213.6, -74, -221.4, -74, -399, -2.29999, -399, 3.39999, -220, 73.3, -220, 75.9, -142.1, 47.4, -96.2, 58, -94, 58, -86, 68.6, -86, 70.9, -56.8, 97, -46, 139, -46, 141.5, -74, 213.6, -74, 220.4, -8, 386.4, -8, 389.7, -3, 395.7, -3, 397.3, -0.700012, 398.3, 4.70001, 394, 6.39999, 394, 72.4, 223, 74.4, 223, 72, 210.6, 72, 207.6, 47.4, 142.2, 57, 100.2, 57, 96.8, 66.8, 88, 68.9, 88, 95, 58.8, 95, 57.5, 136.1, 47, 143.6, 47, 213.6, 74, 222.4, 74, 396.5, 4, 400, 4, 397, -3.5, 397, -5.39999, 223, -72.4, 223, -74.3, 213.7, -73, 210.6, -73, 140.2, -46.5, 100.3, -57, 96.9, -57, 87, -67.9, 87, -69.9, 58.8, -95, 57.5, -95, 47, -136, 47, -143.6, 74, -213.6, 74, -221.4, 7, -389.5, 7, -392.9)
+
+[node name="Star" type="Sprite2D" parent="Star/CollisionPolygon2D"]
+scale = Vector2(1, 1)
+texture = ExtResource("1_cnfwl")
