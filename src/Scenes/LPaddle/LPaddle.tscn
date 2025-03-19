@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d4kqp51lhguhm" path="res://Assets/Hinata.jpg" id="2_4mlp6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u25w7"]
-size = Vector2(111.698, 18.4527)
+size = Vector2(264.63, 34.4578)
 
 [node name="LPaddle" type="Node2D"]
 
@@ -19,10 +19,11 @@ angular_damp_mode = 1
 script = ExtResource("1_teokm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LPaddle"]
-position = Vector2(56, 0)
+position = Vector2(132.466, -0.156879)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_u25w7")
 
 [node name="Sprite2D" type="Sprite2D" parent="LPaddle"]
-position = Vector2(56.0853, -0.00124241)
-scale = Vector2(0.0582332, 0.0169796)
+position = Vector2(132.396, -0.084)
+scale = Vector2(0.138, 0.032)
 texture = ExtResource("2_4mlp6")
