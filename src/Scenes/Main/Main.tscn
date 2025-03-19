@@ -1,25 +1,28 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=12 format=3 uid="uid://cjta7xgorpjno"]
 
 [ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
 [ext_resource type="PhysicsMaterial" uid="uid://dn7hrk7cl5j8r" path="res://Materials/WallMaterial.tres" id="2_aw1lf"]
 [ext_resource type="Texture2D" uid="uid://uwjo0u50hlpa" path="res://Assets/BG.jpg" id="2_o8wgc"]
 [ext_resource type="PackedScene" uid="uid://b0bp55t44lqov" path="res://Scenes/RPaddle/RPaddle.tscn" id="3_cmk6n"]
 [ext_resource type="PackedScene" uid="uid://bw44582byoudt" path="res://Scenes/LPaddle/LPaddle.tscn" id="4_i3fi7"]
-[ext_resource type="PackedScene" uid="uid://c5pgnbaoaocol" path="res://Scenes/Ball/Ball.tscn" id="5_7npjy"]
 [ext_resource type="Texture2D" uid="uid://dhvojj4hbu14m" path="res://Assets/Border.jpg" id="6_w20t6"]
 [ext_resource type="PackedScene" uid="uid://d4k5ev7ig031x" path="res://Scenes/Star/Star.tscn" id="7_5s61s"]
+[ext_resource type="PackedScene" uid="uid://duajjy6uf3p6" path="res://Scenes/Spawners/BallSpawner.tscn" id="8_5s61s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w20t6"]
-size = Vector2(540, 39)
+size = Vector2(920, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aw1lf"]
-size = Vector2(881, 39.0001)
+size = Vector2(1406, 39.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s61s"]
+size = Vector2(851, 19)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o8wgc")
 
 [node name="BottomWall" type="StaticBody2D" parent="."]
-position = Vector2(269, 940)
+position = Vector2(459, 1420)
 physics_material_override = ExtResource("2_aw1lf")
 metadata/_edit_lock_ = true
 
@@ -34,54 +37,11 @@ position = Vector2(1, 6.10352e-05)
 scale = Vector2(0.094832, 0.231863)
 texture = ExtResource("6_w20t6")
 region_enabled = true
-region_rect = Rect2(0, 0, 5695.45, 170.644)
-metadata/_edit_lock_ = true
-
-[node name="Ball" parent="." instance=ExtResource("5_7npjy")]
-z_index = 5
-position = Vector2(373, 786)
-metadata/_edit_lock_ = true
-
-[node name="RPaddle2" parent="." instance=ExtResource("3_cmk6n")]
-position = Vector2(402, 819)
-metadata/_edit_lock_ = true
-
-[node name="LPaddle" parent="." instance=ExtResource("4_i3fi7")]
-position = Vector2(138, 819)
-metadata/_edit_lock_ = true
-
-[node name="Star" parent="." instance=ExtResource("7_5s61s")]
-position = Vector2(388, 423)
-
-[node name="Bg" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(270, 480)
-scale = Vector2(0.75, 1.11498)
-texture = ExtResource("2_o8wgc")
-metadata/_edit_lock_ = true
-
-[node name="RightWall" type="StaticBody2D" parent="."]
-position = Vector2(520, 654)
-rotation = -1.5708
-physics_material_override = ExtResource("2_aw1lf")
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(174.5, 0.499939)
-shape = SubResource("RectangleShape2D_aw1lf")
-metadata/_edit_lock_ = true
-
-[node name="Border" type="Sprite2D" parent="RightWall"]
-texture_repeat = 2
-position = Vector2(174, 1.80006e-05)
-scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
-region_enabled = true
-region_rect = Rect2(0, 0, 9295.72, 170.644)
+region_rect = Rect2(0, 0, 9700, 170.644)
 metadata/_edit_lock_ = true
 
 [node name="TopWall" type="StaticBody2D" parent="."]
-position = Vector2(269, 19)
+position = Vector2(459, 17)
 physics_material_override = ExtResource("2_aw1lf")
 metadata/_edit_lock_ = true
 
@@ -96,11 +56,31 @@ position = Vector2(1, 6.10352e-05)
 scale = Vector2(0.094832, 0.231863)
 texture = ExtResource("6_w20t6")
 region_enabled = true
-region_rect = Rect2(0, 0, 5695.45, 170.644)
+region_rect = Rect2(0, 0, 9700, 170.644)
+metadata/_edit_lock_ = true
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(901, 890)
+rotation = -1.5708
+physics_material_override = ExtResource("2_aw1lf")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(187, 0.499939)
+shape = SubResource("RectangleShape2D_aw1lf")
+metadata/_edit_lock_ = true
+
+[node name="Border" type="Sprite2D" parent="RightWall"]
+texture_repeat = 2
+position = Vector2(174, 1.80006e-05)
+scale = Vector2(0.094832, 0.231863)
+texture = ExtResource("6_w20t6")
+region_enabled = true
+region_rect = Rect2(0, 0, 15000, 170.644)
 metadata/_edit_lock_ = true
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
-position = Vector2(20, 654)
+position = Vector2(19, 884)
 rotation = -1.5708
 physics_material_override = ExtResource("2_aw1lf")
 metadata/_edit_lock_ = true
@@ -116,8 +96,37 @@ position = Vector2(174, 1.80006e-05)
 scale = Vector2(0.094832, 0.231863)
 texture = ExtResource("6_w20t6")
 region_enabled = true
-region_rect = Rect2(0, 0, 9300.45, 170.644)
+region_rect = Rect2(0, 0, 15000, 170.644)
+metadata/_edit_lock_ = true
+
+[node name="RPaddle2" parent="." instance=ExtResource("3_cmk6n")]
+position = Vector2(746, 1212)
+metadata/_edit_lock_ = true
+
+[node name="LPaddle" parent="." instance=ExtResource("4_i3fi7")]
+position = Vector2(176, 1216)
+metadata/_edit_lock_ = true
+
+[node name="Star" parent="." instance=ExtResource("7_5s61s")]
+position = Vector2(737, 502)
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(460, 720)
+scale = Vector2(1.27778, 1.67247)
+texture = ExtResource("2_o8wgc")
 metadata/_edit_lock_ = true
 
 [node name="Star2" parent="." instance=ExtResource("7_5s61s")]
-position = Vector2(162, 507)
+position = Vector2(268, 683)
+
+[node name="LoseArea" type="Area2D" parent="."]
+position = Vector2(443, 1401)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoseArea"]
+position = Vector2(17.5, 7.5)
+shape = SubResource("RectangleShape2D_5s61s")
+metadata/_edit_lock_ = true
+
+[node name="BallSpawner" parent="." instance=ExtResource("8_5s61s")]
+position = Vector2(683, 959)
