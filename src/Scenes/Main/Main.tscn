@@ -1,16 +1,18 @@
-[gd_scene load_steps=23 format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=25 format=3 uid="uid://cjta7xgorpjno"]
 
 [ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
 [ext_resource type="PhysicsMaterial" uid="uid://dn7hrk7cl5j8r" path="res://Materials/WallMaterial.tres" id="2_aw1lf"]
 [ext_resource type="PackedScene" uid="uid://b0bp55t44lqov" path="res://Scenes/RPaddle/RPaddle.tscn" id="3_cmk6n"]
+[ext_resource type="Texture2D" uid="uid://e63800dh1uyx" path="res://Assets/Textures/Dark-wood.jpg" id="4_hcu3t"]
 [ext_resource type="PackedScene" uid="uid://bw44582byoudt" path="res://Scenes/LPaddle/LPaddle.tscn" id="4_i3fi7"]
-[ext_resource type="Texture2D" uid="uid://dhvojj4hbu14m" path="res://Assets/Border.jpg" id="6_w20t6"]
 [ext_resource type="PackedScene" uid="uid://d4k5ev7ig031x" path="res://Scenes/Star/Star.tscn" id="7_5s61s"]
 [ext_resource type="Texture2D" uid="uid://bxyxypqqv8jkg" path="res://Assets/Textures/O5GLN30.jpg" id="7_wgovn"]
 [ext_resource type="PackedScene" uid="uid://duajjy6uf3p6" path="res://Scenes/Spawners/BallSpawner.tscn" id="8_5s61s"]
 [ext_resource type="PackedScene" uid="uid://c3qabvqjknofg" path="res://Scenes/Characters/Characters.tscn" id="9_7npjy"]
+[ext_resource type="PhysicsMaterial" uid="uid://dhh2rivvd0283" path="res://Materials/low-fric.tres" id="10_qdkat"]
 [ext_resource type="Texture2D" uid="uid://b4p7iuxass43" path="res://Assets/Structures/feather.png" id="10_wgovn"]
 [ext_resource type="Texture2D" uid="uid://bb68okv2ssrje" path="res://Assets/Structures/44.png" id="11_cv8e0"]
+[ext_resource type="PhysicsMaterial" uid="uid://croaf26gtg7px" path="res://Materials/bouncy.tres" id="12_hcu3t"]
 [ext_resource type="Texture2D" uid="uid://b1sffm8ua6co6" path="res://Assets/Currencies/without_shadow/3.png" id="12_hkvnm"]
 [ext_resource type="Texture2D" uid="uid://jjhi5ej8gocj" path="res://Assets/Currencies/without_shadow/25.png" id="13_hkvnm"]
 [ext_resource type="Texture2D" uid="uid://cnkrbv0pxed73" path="res://Assets/Currencies/without_shadow/32.png" id="14_5ci8a"]
@@ -52,7 +54,7 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(1, 6.10352e-05)
 scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
+texture = ExtResource("4_hcu3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 9700, 170.644)
 metadata/_edit_lock_ = true
@@ -71,7 +73,7 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(1, 6.10352e-05)
 scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
+texture = ExtResource("4_hcu3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 9700, 170.644)
 metadata/_edit_lock_ = true
@@ -91,7 +93,7 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(174, 1.80006e-05)
 scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
+texture = ExtResource("4_hcu3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 15000, 170.644)
 metadata/_edit_lock_ = true
@@ -111,7 +113,7 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(174, 1.80006e-05)
 scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
+texture = ExtResource("4_hcu3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 15000, 170.644)
 metadata/_edit_lock_ = true
@@ -151,6 +153,7 @@ position = Vector2(681, 1107)
 [node name="Feather" type="StaticBody2D" parent="."]
 position = Vector2(159.5, 1132.5)
 scale = Vector2(0.408349, 0.424202)
+physics_material_override = ExtResource("10_qdkat")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Feather"]
 position = Vector2(-23.2643, 206.27)
@@ -177,6 +180,7 @@ metadata/_edit_lock_ = true
 [node name="Diamond" type="StaticBody2D" parent="."]
 position = Vector2(673, 1251)
 rotation = 1.65283
+physics_material_override = ExtResource("10_qdkat")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Diamond"]
 position = Vector2(-2.07524, -0.832772)
@@ -191,6 +195,7 @@ metadata/_edit_lock_ = true
 [node name="SquareJewel" type="StaticBody2D" parent="."]
 position = Vector2(373.25, 441.5)
 scale = Vector2(0.740234, 0.785156)
+physics_material_override = ExtResource("12_hcu3t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SquareJewel"]
 position = Vector2(34.7863, -18.4677)
@@ -219,7 +224,9 @@ scale = Vector2(0.875, 0.828125)
 
 [node name="HeartGem" type="StaticBody2D" parent="."]
 position = Vector2(260, 690)
+rotation = -3.14159
 scale = Vector2(0.890625, 0.921875)
+physics_material_override = ExtResource("12_hcu3t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HeartGem"]
 position = Vector2(-5.61404, -2.86102e-06)
@@ -234,6 +241,7 @@ metadata/_edit_lock_ = true
 position = Vector2(766, 925)
 rotation = 1.59872
 scale = Vector2(1.85186, 0.852403)
+physics_material_override = ExtResource("12_hcu3t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MageStaff"]
 polygon = PackedVector2Array(-187.427, 1.9848, -184.622, 10.0299, -167.289, 13.6725, -133.747, 17.5051, -82.4367, 16.7386, -65.073, 22.7266, -40.8127, 18.9072, -0.838348, 18.8286, 13.2112, 19.1496, 25.9279, 41.8502, 38.5239, 55.1691, 60.236, 63.2405, 83.477, 64.1773, 97.4813, 60.9803, 111.455, 55.4378, 126.554, 53.3479, 134.289, 24.7119, 136.837, 12.821, 137.227, 1.0614, 132.697, -15.0944, 123.325, -29.7825, 108.57, -42.9705, 96.0791, -48.0806, 82.0144, -49.5743, 80.8142, -58.8904, 72.6421, -64.2625, 62.941, -62.5002, 54.9497, -53.7999, 51.8014, -46.5672, 24.5437, -23.7881, 7.85553, -19.2546, -6.16385, -17.2302, -19.1338, -17.6168, -38.5662, -16.4376, -52.6006, -15.5859, -59.063, -14.0201, -74.2524, -18.9664, -100.717, -18.5341, -121.769, -17.2565, -141.201, -16.0773, -165.446, -11.0852, -179.481, -10.2335, -186.423, -3.94415)
