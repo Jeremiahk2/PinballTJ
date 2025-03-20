@@ -2,9 +2,9 @@ extends Line2D
 
 
 func _process(delta):
-    add_point(get_parent().global_position)
-    if points.size() > 30:
-        remove_point(0)
+	add_point(get_parent().global_position)
+	if points.size() > 30:
+		remove_point(0)
 
 
 
@@ -27,5 +27,5 @@ func _process(delta):
 #     add_point(current_position - ball_radius * direction)
 #     if points.size() > 10:
 #         remove_point(0)
-    
+	
 #     previous_position = current_position

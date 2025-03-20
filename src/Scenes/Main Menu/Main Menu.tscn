@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6mtrp6pnfdds"]
+[gd_scene load_steps=4 format=3 uid="uid://b6mtrp6pnfdds"]
 
 [ext_resource type="Script" uid="uid://dtv6ws61th6jk" path="res://Scenes/Main Menu/main_menu.gd" id="1_0srae"]
+[ext_resource type="Texture2D" uid="uid://cyho3weivkk30" path="res://Assets/Menu.png" id="2_41p41"]
+[ext_resource type="FontFile" uid="uid://dt5aqc7mm12t4" path="res://Assets/Fonts/PrincessSofia-Regular.ttf" id="4_p4bku"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,27 +13,48 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0srae")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 232.0
-offset_right = 520.0
-offset_bottom = 592.0
+[node name="Menu" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(456, 717)
+texture = ExtResource("2_41p41")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1099.0
+offset_right = -5.0
+offset_bottom = -864.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_p4bku")
+theme_override_font_sizes/normal_font_size = 68
+text = "Tales of Wyrmgate
+The Orb"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
-
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Options"
-
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="ClickToStart" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -323.0
+offset_right = -9.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0.48178, 0.51, 0.0867, 1)
+theme_override_fonts/normal_font = ExtResource("4_p4bku")
+theme_override_font_sizes/normal_font_size = 68
+text = "Click To Start"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://c35720g2bxnyf"
+path="res://.godot/imported/High_Outcome.dialogue-c60b80f89c18a7cfa1fdd79f88813af2.tres"
+
+[deps]
+
+source_file="res://Dialogue/High_Outcome.dialogue"
+dest_files=["res://.godot/imported/High_Outcome.dialogue-c60b80f89c18a7cfa1fdd79f88813af2.tres"]
+
+[params]
+
+defaults=true
