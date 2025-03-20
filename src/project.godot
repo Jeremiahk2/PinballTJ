@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="src"
-run/main_scene="uid://cjta7xgorpjno"
+run/main_scene="uid://b6mtrp6pnfdds"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -28,7 +28,9 @@ runtime/balloon_path="res://Balloons/balloon.tscn"
 
 window/size/viewport_width=920
 window/size/viewport_height=1440
-window/stretch/mode="viewport"
+window/size/mode=4
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
 
 [editor_plugins]
 
