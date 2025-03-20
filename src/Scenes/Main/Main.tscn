@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=23 format=3 uid="uid://cjta7xgorpjno"]
 
 [ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
 [ext_resource type="PhysicsMaterial" uid="uid://dn7hrk7cl5j8r" path="res://Materials/WallMaterial.tres" id="2_aw1lf"]
@@ -26,6 +26,14 @@ size = Vector2(1406, 39.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s61s"]
 size = Vector2(851, 19)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_epx8f"]
+a = Vector2(34, -4)
+b = Vector2(-20, 17)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hcu3t"]
+a = Vector2(-22, 9)
+b = Vector2(12, 24)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o8wgc")
@@ -160,7 +168,7 @@ scale = Vector2(0.890887, 0.877551)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-116.738, -64.9534)
-polygon = PackedVector2Array(179.596, 224.488, 189.699, 207.395, 197.556, 190.302, 202.046, 176.628, 207.658, 160.674, 206.536, 141.302, 202.046, 116.233, 196.433, 95.721, 189.699, 79.7675, 180.719, 63.814, 169.494, 50.1396, 157.147, 37.6047, 150.412, 33.0466, 122.35, 33.0466, 55.0013, 34.1862, 4.4899, 28.4885, -34.7968, 11.3954, -60.6137, -13.6743, -72.961, -30.7673, -85.3082, -55.8372, -88.6756, -78.6278, -86.4307, -107.116, -81.9408, -131.046, -75.2059, -152.698, -62.8587, -170.93, -51.6339, -184.605, -35.9193, -194.86, -23.572, -202.837, -14.5922, -206.256, -6.73486, -207.395, 5.61237, -209.674, 20.2046, -214.232, 29.1844, -221.07, 23.572, -230.186, 11.2248, -238.163, -28.0619, -243.86, -111.125, -230.186, -142.555, -203.977, -175.106, -151.558, -200.923, -86.6046, -204.291, -6.83716, -182.964, 66.0931, -130.207, 144.721, -69.5936, 197.14, 28.0619, 241.581, 120.105, 241.581, 176.229, 227.907)
+polygon = PackedVector2Array(179.596, 224.488, 189.699, 207.395, 197.556, 190.302, 202.046, 176.628, 207.658, 160.674, 206.536, 141.302, 202.046, 116.233, 196.433, 95.721, 189.699, 79.7675, 180.719, 63.814, 169.494, 50.1396, 150.412, 33.0466, 122.35, 33.0466, 55.0013, 34.1862, 4.4899, 28.4885, -34.7968, 11.3954, -60.6137, -13.6743, -72.961, -30.7673, -85.3082, -55.8372, -88.6756, -78.6278, -86.4307, -107.116, -81.9408, -131.046, -75.2059, -152.698, -62.8587, -170.93, -51.6339, -184.605, -35.9193, -194.86, -23.572, -202.837, -14.5922, -206.256, -6.73486, -207.395, 5.61237, -209.674, 20.2046, -214.232, 29.1844, -221.07, 23.572, -230.186, 11.2248, -238.163, -28.0619, -243.86, -111.125, -230.186, -142.555, -203.977, -175.106, -151.558, -200.923, -86.6046, -204.291, -6.83716, -182.964, 66.0931, -130.207, 144.721, -69.5936, 197.14, 28.0619, 241.581, 120.105, 241.581, 176.229, 227.907)
 
 [node name="DragonHornSprite" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D"]
 texture = ExtResource("11_cv8e0")
@@ -186,11 +194,9 @@ scale = Vector2(0.740234, 0.785156)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SquareJewel"]
 position = Vector2(34.7863, -18.4677)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-48.971, 85.9701, -62.4802, 71.9601, -62.4802, -71.9603, -47.6201, -85.9702, 50.9973, -85.9702, 61.8048, -71.9603, 61.8048, 71.9601, 49.6465, 85.9701)
 
 [node name="SquareJewelSprite" type="Sprite2D" parent="SquareJewel/CollisionPolygon2D"]
-scale = Vector2(1, 1)
 texture = ExtResource("13_hkvnm")
 metadata/_edit_lock_ = true
 
@@ -204,7 +210,6 @@ scale = Vector2(1.18206, 1.05473)
 polygon = PackedVector2Array(-22.8572, 66.415, -98.2857, 42.2642, -80, -12.0754, 29.7142, -68.8302, 81.1428, -59.1698, 98.2857, -15.6981)
 
 [node name="GoldBarSprite" type="Sprite2D" parent="ScoreArea1/CollisionPolygon2D"]
-scale = Vector2(1, 1)
 texture = ExtResource("14_5ci8a")
 metadata/_edit_lock_ = true
 
@@ -242,3 +247,16 @@ position = Vector2(1509, 770)
 rotation = -4.2429
 scale = Vector2(1.10869, 0.948423)
 texture = ExtResource("16_hcu3t")
+
+[node name="right_paddle_bound" type="StaticBody2D" parent="."]
+position = Vector2(580, 1236)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_paddle_bound"]
+shape = SubResource("SegmentShape2D_epx8f")
+
+[node name="left_paddle_bound" type="StaticBody2D" parent="."]
+position = Vector2(252, 1229)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_paddle_bound"]
+shape = SubResource("SegmentShape2D_hcu3t")
