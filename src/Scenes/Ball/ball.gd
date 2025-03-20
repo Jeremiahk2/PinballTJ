@@ -1,8 +1,7 @@
 extends RigidBody2D
 
 func _ready():
-	body_entered.connect(collided);
+	body_exited.connect(collided);
 
 func collided(node):
-	if node.name == "LPaddle":
-		print("Collided with Right Paddle")
+	State.increment_score(node.name);

@@ -1,13 +1,6 @@
 extends Node2D
 
-var score = 0
 var lives = 2
-
-var point_values = {
-	"SquareJewel": 100,
-	"HeartGem": 50,
-	"GoldBar": 10
-}
 
 var introDialogue = load("res://Dialogue/intro.dialogue")
 
@@ -32,14 +25,5 @@ func on_lose_area_body_entered(body):
 			print("lives left: ", lives)
 			$BallSpawner.call_deferred("spawn")
 		else:
+			State.score = 0;
 			get_tree().change_scene_to_file.call_deferred(("res://Scenes/Main Menu/Main Menu.tscn"))
-
-func on_score_area_body_entered(body):
-	if body.name == "ball":
-		var parent_name = body.get_parent().name
-		if parent_name in point_values:
-			increment_score(point_values[parent_name])
-
-func increment_score(value):
-	score += value
-	print("score: ", score)
