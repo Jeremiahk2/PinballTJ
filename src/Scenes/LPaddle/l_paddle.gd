@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @onready var startingRotation = transform.get_rotation();
-var paddleVelocity = 8;
+var paddleVelocity = 10;
 
 func _ready():
 	pass;

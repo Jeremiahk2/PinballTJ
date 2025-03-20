@@ -32,4 +32,5 @@ Katrina: This is... Certainly something. But are you sure it's powerful? It look
 do State.speaker_changed.emit("Eryndor")
 Eryndor: According to my research, this artifact should be capable of growing with you. In fact, this table is perfect. We can start powering it up right now. 
 Eryndor: Use your magic to move the objects on the table. By doing so, you pass magic into the artifact. The more you pass in during this period, the more powerful it, and you, will become.
+do State.speaker_changed.emit("None")
 => END

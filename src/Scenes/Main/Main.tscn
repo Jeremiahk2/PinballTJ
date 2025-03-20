@@ -1,14 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=25 format=3 uid="uid://cjta7xgorpjno"]
 
 [ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
 [ext_resource type="PhysicsMaterial" uid="uid://dn7hrk7cl5j8r" path="res://Materials/WallMaterial.tres" id="2_aw1lf"]
-[ext_resource type="Texture2D" uid="uid://uwjo0u50hlpa" path="res://Assets/BG.jpg" id="2_o8wgc"]
 [ext_resource type="PackedScene" uid="uid://b0bp55t44lqov" path="res://Scenes/RPaddle/RPaddle.tscn" id="3_cmk6n"]
+[ext_resource type="Texture2D" uid="uid://e63800dh1uyx" path="res://Assets/Textures/Dark-wood.jpg" id="4_hcu3t"]
 [ext_resource type="PackedScene" uid="uid://bw44582byoudt" path="res://Scenes/LPaddle/LPaddle.tscn" id="4_i3fi7"]
-[ext_resource type="Texture2D" uid="uid://dhvojj4hbu14m" path="res://Assets/Border.jpg" id="6_w20t6"]
 [ext_resource type="PackedScene" uid="uid://d4k5ev7ig031x" path="res://Scenes/Star/Star.tscn" id="7_5s61s"]
+[ext_resource type="Texture2D" uid="uid://bxyxypqqv8jkg" path="res://Assets/Textures/O5GLN30.jpg" id="7_wgovn"]
 [ext_resource type="PackedScene" uid="uid://duajjy6uf3p6" path="res://Scenes/Spawners/BallSpawner.tscn" id="8_5s61s"]
 [ext_resource type="PackedScene" uid="uid://c3qabvqjknofg" path="res://Scenes/Characters/Characters.tscn" id="9_7npjy"]
+[ext_resource type="PhysicsMaterial" uid="uid://dhh2rivvd0283" path="res://Materials/low-fric.tres" id="10_qdkat"]
+[ext_resource type="Texture2D" uid="uid://b4p7iuxass43" path="res://Assets/Structures/feather.png" id="10_wgovn"]
+[ext_resource type="Texture2D" uid="uid://bb68okv2ssrje" path="res://Assets/Structures/44.png" id="11_cv8e0"]
+[ext_resource type="PhysicsMaterial" uid="uid://croaf26gtg7px" path="res://Materials/bouncy.tres" id="12_hcu3t"]
+[ext_resource type="Texture2D" uid="uid://b1sffm8ua6co6" path="res://Assets/Currencies/without_shadow/3.png" id="12_hkvnm"]
+[ext_resource type="Texture2D" uid="uid://jjhi5ej8gocj" path="res://Assets/Currencies/without_shadow/25.png" id="13_hkvnm"]
+[ext_resource type="Texture2D" uid="uid://cnkrbv0pxed73" path="res://Assets/Currencies/without_shadow/32.png" id="14_5ci8a"]
+[ext_resource type="Texture2D" uid="uid://bkwm0m1igxmef" path="res://Assets/Currencies/without_shadow/41.png" id="15_epx8f"]
+[ext_resource type="Texture2D" uid="uid://cmnxlgleo2ahy" path="res://Assets/Structures/13.png" id="16_hcu3t"]
+[ext_resource type="Texture2D" uid="uid://cja3t4hnccrwu" path="res://Assets/Paddle Sprites/mage_hooked_paddle.png" id="17_qdkat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w20t6"]
 size = Vector2(920, 39)
@@ -18,6 +28,14 @@ size = Vector2(1406, 39.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s61s"]
 size = Vector2(851, 19)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_epx8f"]
+a = Vector2(34, -4)
+b = Vector2(-20, 17)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hcu3t"]
+a = Vector2(-22, 9)
+b = Vector2(12, 24)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_o8wgc")
@@ -36,7 +54,7 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(1, 6.10352e-05)
 scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
+texture = ExtResource("4_hcu3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 9700, 170.644)
 metadata/_edit_lock_ = true
@@ -55,7 +73,7 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(1, 6.10352e-05)
 scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
+texture = ExtResource("4_hcu3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 9700, 170.644)
 metadata/_edit_lock_ = true
@@ -75,7 +93,7 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(174, 1.80006e-05)
 scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
+texture = ExtResource("4_hcu3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 15000, 170.644)
 metadata/_edit_lock_ = true
@@ -95,31 +113,29 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(174, 1.80006e-05)
 scale = Vector2(0.094832, 0.231863)
-texture = ExtResource("6_w20t6")
+texture = ExtResource("4_hcu3t")
 region_enabled = true
 region_rect = Rect2(0, 0, 15000, 170.644)
 metadata/_edit_lock_ = true
 
 [node name="RPaddle2" parent="." instance=ExtResource("3_cmk6n")]
-position = Vector2(746, 1212)
-metadata/_edit_lock_ = true
+position = Vector2(583, 1259)
 
 [node name="LPaddle" parent="." instance=ExtResource("4_i3fi7")]
-position = Vector2(176, 1216)
-metadata/_edit_lock_ = true
+position = Vector2(245, 1259)
 
 [node name="Star" parent="." instance=ExtResource("7_5s61s")]
-position = Vector2(737, 502)
+position = Vector2(-253, 110)
 
 [node name="Bg" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(460, 720)
 scale = Vector2(1.27778, 1.67247)
-texture = ExtResource("2_o8wgc")
+texture = ExtResource("7_wgovn")
 metadata/_edit_lock_ = true
 
 [node name="Star2" parent="." instance=ExtResource("7_5s61s")]
-position = Vector2(268, 683)
+position = Vector2(-262, 370)
 
 [node name="LoseArea" type="Area2D" parent="."]
 position = Vector2(443, 1401)
@@ -130,6 +146,122 @@ shape = SubResource("RectangleShape2D_5s61s")
 metadata/_edit_lock_ = true
 
 [node name="BallSpawner" parent="." instance=ExtResource("8_5s61s")]
-position = Vector2(683, 959)
+position = Vector2(681, 1107)
 
 [node name="Characters" parent="." instance=ExtResource("9_7npjy")]
+
+[node name="Feather" type="StaticBody2D" parent="."]
+position = Vector2(159.5, 1132.5)
+scale = Vector2(0.408349, 0.424202)
+physics_material_override = ExtResource("10_qdkat")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Feather"]
+position = Vector2(-23.2643, 206.27)
+scale = Vector2(1.09302, 1.0721)
+polygon = PackedVector2Array(-230.348, -235, -160.322, -204.124, -141.895, -197.263, -101.353, -181.825, -68.1831, -164.672, -23.9562, -142.372, 16.5851, -113.212, 62.6547, -73.7592, 99.5104, -44.5985, 132.681, -15.438, 186.121, 42.8833, 197.178, 60.0364, 202.706, 96.0583, 189.807, 150.949, 230.348, 231.569, 224.82, 235, 199.021, 216.131, 171.379, 161.241, 112.41, 152.664, 44.2269, 132.08, -23.9562, 42.8833, -108.724, -39.4525, -151.108, -82.3357, -184.279, -133.796, -219.292, -198.978)
+
+[node name="FeatherSprite" type="Sprite2D" parent="Feather/CollisionPolygon2D"]
+texture = ExtResource("10_wgovn")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(645, 262)
+rotation = 1.5708
+scale = Vector2(0.890887, 0.877551)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-116.738, -64.9534)
+polygon = PackedVector2Array(179.596, 224.488, 189.699, 207.395, 197.556, 190.302, 202.046, 176.628, 207.658, 160.674, 206.536, 141.302, 202.046, 116.233, 196.433, 95.721, 189.699, 79.7675, 180.719, 63.814, 169.494, 50.1396, 150.412, 33.0466, 122.35, 33.0466, 55.0013, 34.1862, 4.4899, 28.4885, -34.7968, 11.3954, -60.6137, -13.6743, -72.961, -30.7673, -85.3082, -55.8372, -88.6756, -78.6278, -86.4307, -107.116, -81.9408, -131.046, -75.2059, -152.698, -62.8587, -170.93, -51.6339, -184.605, -35.9193, -194.86, -23.572, -202.837, -14.5922, -206.256, -6.73486, -207.395, 5.61237, -209.674, 20.2046, -214.232, 29.1844, -221.07, 23.572, -230.186, 11.2248, -238.163, -28.0619, -243.86, -111.125, -230.186, -142.555, -203.977, -175.106, -151.558, -200.923, -86.6046, -204.291, -6.83716, -182.964, 66.0931, -130.207, 144.721, -69.5936, 197.14, 28.0619, 241.581, 120.105, 241.581, 176.229, 227.907)
+
+[node name="DragonHornSprite" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D"]
+texture = ExtResource("11_cv8e0")
+metadata/_edit_lock_ = true
+
+[node name="Diamond" type="StaticBody2D" parent="."]
+position = Vector2(673, 1251)
+rotation = 1.65283
+physics_material_override = ExtResource("10_qdkat")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Diamond"]
+position = Vector2(-2.07524, -0.832772)
+rotation = -0.122173
+scale = Vector2(1.26265, 1.289)
+polygon = PackedVector2Array(-0.407837, 68.263, -67.4854, -27.563, -51.3351, -63.0055, -21.6818, -68.4536, 23.5767, -67.1577, 48.9022, -64.2229, 68.8768, -28.7402, 68.2079, -24.6718, 1.66736, 69.0958)
+
+[node name="DiamondSprite" type="Sprite2D" parent="Diamond/CollisionPolygon2D"]
+texture = ExtResource("12_hkvnm")
+metadata/_edit_lock_ = true
+
+[node name="SquareJewel" type="StaticBody2D" parent="."]
+position = Vector2(373.25, 441.5)
+scale = Vector2(0.740234, 0.785156)
+physics_material_override = ExtResource("12_hcu3t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SquareJewel"]
+position = Vector2(34.7863, -18.4677)
+polygon = PackedVector2Array(-48.971, 85.9701, -62.4802, 71.9601, -62.4802, -71.9603, -47.6201, -85.9702, 50.9973, -85.9702, 61.8048, -71.9603, 61.8048, 71.9601, 49.6465, 85.9701)
+
+[node name="SquareJewelSprite" type="Sprite2D" parent="SquareJewel/CollisionPolygon2D"]
+texture = ExtResource("13_hkvnm")
+metadata/_edit_lock_ = true
+
+[node name="GoldBar" type="StaticBody2D" parent="."]
+position = Vector2(599, 1112)
+scale = Vector2(0.875, 0.828125)
+physics_material_override = ExtResource("12_hcu3t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GoldBar"]
+position = Vector2(-27.4285, 4.8302)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-22.8572, 66.415, -98.2857, 42.2642, -80, -12.0754, 29.7142, -68.8302, 81.1428, -59.1698, 98.2857, -15.6981)
+
+[node name="GoldBarSprite" type="Sprite2D" parent="GoldBar/CollisionPolygon2D"]
+texture = ExtResource("14_5ci8a")
+metadata/_edit_lock_ = true
+
+[node name="HeartGem" type="StaticBody2D" parent="."]
+position = Vector2(260, 690)
+rotation = -3.14159
+scale = Vector2(0.890625, 0.921875)
+physics_material_override = ExtResource("12_hcu3t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HeartGem"]
+position = Vector2(-5.61404, -2.86102e-06)
+polygon = PackedVector2Array(-52.7719, -68.339, -16.8421, -65.0848, -1.1228, -49.8983, 15.7193, -64, 50.5263, -70.5085, 81.9649, -33.6271, 83.0877, -28.2034, 78.5965, -3.25427, 72.9825, 13.0169, 66.2456, 23.8644, 53.8947, 36.8813, 17.9649, 61.8305, 0, 70.5084, -15.7193, 61.8305, -38.1754, 47.7288, -57.2632, 34.7119, -67.3684, 22.7796, -84.2105, -28.2034)
+metadata/_edit_lock_ = true
+
+[node name="HeartGemSprite" type="Sprite2D" parent="HeartGem/CollisionPolygon2D"]
+texture = ExtResource("15_epx8f")
+metadata/_edit_lock_ = true
+
+[node name="MageStaff" type="StaticBody2D" parent="."]
+position = Vector2(766, 925)
+rotation = 1.59872
+scale = Vector2(1.85186, 0.852403)
+physics_material_override = ExtResource("12_hcu3t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MageStaff"]
+polygon = PackedVector2Array(-187.427, 1.9848, -184.622, 10.0299, -167.289, 13.6725, -133.747, 17.5051, -82.4367, 16.7386, -65.073, 22.7266, -40.8127, 18.9072, -0.838348, 18.8286, 13.2112, 19.1496, 25.9279, 41.8502, 38.5239, 55.1691, 60.236, 63.2405, 83.477, 64.1773, 97.4813, 60.9803, 111.455, 55.4378, 126.554, 53.3479, 134.289, 24.7119, 136.837, 12.821, 137.227, 1.0614, 132.697, -15.0944, 123.325, -29.7825, 108.57, -42.9705, 96.0791, -48.0806, 82.0144, -49.5743, 80.8142, -58.8904, 72.6421, -64.2625, 62.941, -62.5002, 54.9497, -53.7999, 51.8014, -46.5672, 24.5437, -23.7881, 7.85553, -19.2546, -6.16385, -17.2302, -19.1338, -17.6168, -38.5662, -16.4376, -52.6006, -15.5859, -59.063, -14.0201, -74.2524, -18.9664, -100.717, -18.5341, -121.769, -17.2565, -141.201, -16.0773, -165.446, -11.0852, -179.481, -10.2335, -186.423, -3.94415)
+
+[node name="MageStaff" type="Sprite2D" parent="MageStaff/CollisionPolygon2D"]
+texture = ExtResource("17_qdkat")
+metadata/_edit_lock_ = true
+
+[node name="13" type="Sprite2D" parent="."]
+position = Vector2(1509, 770)
+rotation = -4.2429
+scale = Vector2(1.10869, 0.948423)
+texture = ExtResource("16_hcu3t")
+
+[node name="right_paddle_bound" type="StaticBody2D" parent="."]
+position = Vector2(580, 1236)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_paddle_bound"]
+shape = SubResource("SegmentShape2D_epx8f")
+
+[node name="left_paddle_bound" type="StaticBody2D" parent="."]
+position = Vector2(252, 1229)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_paddle_bound"]
+shape = SubResource("SegmentShape2D_hcu3t")
