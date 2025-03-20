@@ -13,9 +13,6 @@ var introDialogue = load("res://Dialogue/intro.dialogue")
 
 func _ready():
 	$LoseArea.connect("body_entered", Callable(self, "on_lose_area_body_entered"))
-	$ScoreArea1.connect("body_entered", Callable(self, "on_score_area_body_entered"))
-	# $ScoreArea2.connect("body_entered", Callable(self, "on_score_area_body_entered"))
-	# $ScoreArea3.connect("body_entered", Callable(self, "on_score_area_body_entered"))
 	if !State.intro_done:
 		State.intro_done = true;
 		DialogueManager.dialogue_ended.connect(startGame)

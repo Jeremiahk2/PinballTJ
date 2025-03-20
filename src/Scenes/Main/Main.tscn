@@ -205,22 +205,19 @@ polygon = PackedVector2Array(-48.971, 85.9701, -62.4802, 71.9601, -62.4802, -71.
 texture = ExtResource("13_hkvnm")
 metadata/_edit_lock_ = true
 
-[node name="ScoreArea1" type="Area2D" parent="."]
-position = Vector2(373.25, 441.5)
-scale = Vector2(0.740234, 0.785156)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScoreArea1"]
-position = Vector2(272.549, 859.065)
-scale = Vector2(1.18206, 1.05473)
-polygon = PackedVector2Array(-22.8572, 66.415, -98.2857, 42.2642, -80, -12.0754, 29.7142, -68.8302, 81.1428, -59.1698, 98.2857, -15.6981)
-
-[node name="GoldBarSprite" type="Sprite2D" parent="ScoreArea1/CollisionPolygon2D"]
-texture = ExtResource("14_5ci8a")
-metadata/_edit_lock_ = true
-
 [node name="GoldBar" type="StaticBody2D" parent="."]
 position = Vector2(599, 1112)
 scale = Vector2(0.875, 0.828125)
+physics_material_override = ExtResource("12_hcu3t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GoldBar"]
+position = Vector2(-27.4285, 4.8302)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-22.8572, 66.415, -98.2857, 42.2642, -80, -12.0754, 29.7142, -68.8302, 81.1428, -59.1698, 98.2857, -15.6981)
+
+[node name="GoldBarSprite" type="Sprite2D" parent="GoldBar/CollisionPolygon2D"]
+texture = ExtResource("14_5ci8a")
+metadata/_edit_lock_ = true
 
 [node name="HeartGem" type="StaticBody2D" parent="."]
 position = Vector2(260, 690)
