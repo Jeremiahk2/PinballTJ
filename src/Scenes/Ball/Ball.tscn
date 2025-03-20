@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5pgnbaoaocol"]
+[gd_scene load_steps=9 format=3 uid="uid://c5pgnbaoaocol"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://c3lh57t66tk0m" path="res://Materials/ball.tres" id="1_dvc57"]
 [ext_resource type="Texture2D" uid="uid://db4yu6kc73gta" path="res://Assets/Ball_Texture.png" id="1_xo6r3"]
 [ext_resource type="Script" uid="uid://cproxpuix2bf6" path="res://Scenes/Ball/ball.gd" id="2_75gsl"]
 [ext_resource type="Script" uid="uid://i702c865pocn" path="res://Scenes/Ball/trail_line.gd" id="2_xo6r3"]
+[ext_resource type="AudioStream" uid="uid://ccsrsfx3016al" path="res://Assets/Audio/metal-tap.mp3" id="5_g8do5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xo6r3"]
 radius = 3.6
@@ -43,3 +44,7 @@ width_curve = SubResource("Curve_xo6r3")
 default_color = Color(1, 1, 0.619608, 1)
 gradient = SubResource("Gradient_xo6r3")
 script = ExtResource("2_xo6r3")
+
+[node name="RockHitSfx" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_g8do5")
