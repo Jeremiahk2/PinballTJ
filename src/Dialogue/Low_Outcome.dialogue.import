@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bf7g2qvo603qt"
+path="res://.godot/imported/Low_Outcome.dialogue-da2831f28fcdd7008fe6e940b12e1bc3.tres"
+
+[deps]
+
+source_file="res://Dialogue/Low_Outcome.dialogue"
+dest_files=["res://.godot/imported/Low_Outcome.dialogue-da2831f28fcdd7008fe6e940b12e1bc3.tres"]
+
+[params]
+
+defaults=true

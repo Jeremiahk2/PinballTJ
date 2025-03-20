@@ -36,7 +36,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/intro.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/intro.dialogue", "res://Dialogue/Low_Outcome.dialogue", "res://Dialogue/Medium_Outcome.dialogue", "res://Dialogue/High_Outcome.dialogue")
 
 [layer_names]
 
