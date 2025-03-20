@@ -1,4 +1,4 @@
-extends Label
+extends RichTextLabel
 
 func _process(delta):
-	self.text = "Score: " + str(State.score)
+	self.text = " Score: " + str(State.score)

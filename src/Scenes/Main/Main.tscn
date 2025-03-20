@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=29 format=3 uid="uid://cjta7xgorpjno"]
 
 [ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
 [ext_resource type="PhysicsMaterial" uid="uid://dn7hrk7cl5j8r" path="res://Materials/WallMaterial.tres" id="2_aw1lf"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://ccsrsfx3016al" path="res://Assets/Audio/metal-tap.mp3" id="17_xd21n"]
 [ext_resource type="PackedScene" uid="uid://dla18tq3msimh" path="res://Scenes/Launcher/Launcher.tscn" id="20_udh0u"]
 [ext_resource type="PackedScene" uid="uid://cd43nun0sqm2d" path="res://Scenes/Score Menu/ScoreMenu.tscn" id="21_xggvw"]
+[ext_resource type="Texture2D" uid="uid://ch48lqbli6o86" path="res://Assets/Structures/37.png" id="23_iwp64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w20t6"]
 size = Vector2(1819, 43)
@@ -205,7 +206,7 @@ scale = Vector2(0.740234, 0.785156)
 physics_material_override = ExtResource("12_hcu3t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SquareJewel"]
-position = Vector2(34.7863, -18.4677)
+position = Vector2(61.8048, 71.9602)
 polygon = PackedVector2Array(-48.971, 85.9701, -62.4802, 71.9601, -62.4802, -71.9603, -47.6201, -85.9702, 50.9973, -85.9702, 61.8048, -71.9603, 61.8048, 71.9601, 49.6465, 85.9701)
 
 [node name="SquareJewelSprite" type="Sprite2D" parent="SquareJewel/CollisionPolygon2D"]
@@ -232,9 +233,8 @@ scale = Vector2(0.890625, 0.921875)
 physics_material_override = ExtResource("12_hcu3t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HeartGem"]
-position = Vector2(-5.61404, -2.86102e-06)
+position = Vector2(79.7195, 57.4913)
 polygon = PackedVector2Array(-52.7719, -68.339, -16.8421, -65.0848, -1.1228, -49.8983, 15.7193, -64, 50.5263, -70.5085, 81.9649, -33.6271, 83.0877, -28.2034, 78.5965, -3.25427, 72.9825, 13.0169, 66.2456, 23.8644, 53.8947, 36.8813, 17.9649, 61.8305, 0, 70.5084, -15.7193, 61.8305, -38.1754, 47.7288, -57.2632, 34.7119, -67.3684, 22.7796, -84.2105, -28.2034)
-metadata/_edit_lock_ = true
 
 [node name="HeartGemSprite" type="Sprite2D" parent="HeartGem/CollisionPolygon2D"]
 texture = ExtResource("15_epx8f")
@@ -273,6 +273,19 @@ position = Vector2(252, 1229)
 shape = SubResource("SegmentShape2D_hcu3t")
 
 [node name="ScoreMenu" parent="." instance=ExtResource("21_xggvw")]
+position = Vector2(182, 17)
 
 [node name="RockHitSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_xd21n")
+
+[node name="DragonGem" type="StaticBody2D" parent="."]
+physics_material_override = ExtResource("12_hcu3t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DragonGem"]
+position = Vector2(208, 288)
+scale = Vector2(0.351272, 0.335938)
+polygon = PackedVector2Array(0, -244.093, -122.412, -50.6046, -139.493, -50.6046, -182.195, 23.814, -185.042, 59.535, -207.816, 110.14, -213.51, 128, -204.969, 151.814, -187.889, 172.651, -165.114, 181.581, -139.493, 172.651, -128.106, 154.791, -91.0975, 157.768, -82.5571, 175.628, -59.7827, 181.581, -54.0892, 190.512, -34.1616, 205.395, 0, 241.116, 28.468, 208.372, 48.3956, 196.465, 79.7103, 172.651, 91.0975, 157.768, 96.7911, 142.884, 125.259, 142.884, 128.106, 163.721, 150.88, 181.581, 173.655, 178.605, 196.429, 160.744, 210.663, 136.93, 207.816, 104.186, 187.889, 83.3489, 179.348, 29.7675, 162.267, -11.9069, 136.646, -50.6046, 113.872, -59.5348)
+
+[node name="DragonGemSprite" type="Sprite2D" parent="DragonGem/CollisionPolygon2D"]
+scale = Vector2(1, 1)
+texture = ExtResource("23_iwp64")

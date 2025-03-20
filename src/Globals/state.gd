@@ -12,7 +12,8 @@ func _ready():
 var point_values = {
 	"SquareJewel": 100,
 	"HeartGem": 50,
-	"GoldBar": 10
+	"GoldBar": 10,
+	"DragonGem": 200
 }
 
 func increment_score(name, stream):
