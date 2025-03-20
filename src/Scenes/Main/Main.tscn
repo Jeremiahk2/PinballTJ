@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=27 format=3 uid="uid://cjta7xgorpjno"]
 
 [ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
 [ext_resource type="PhysicsMaterial" uid="uid://dn7hrk7cl5j8r" path="res://Materials/WallMaterial.tres" id="2_aw1lf"]
@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://bkwm0m1igxmef" path="res://Assets/Currencies/without_shadow/41.png" id="15_epx8f"]
 [ext_resource type="Texture2D" uid="uid://cmnxlgleo2ahy" path="res://Assets/Structures/13.png" id="16_hcu3t"]
 [ext_resource type="Texture2D" uid="uid://cja3t4hnccrwu" path="res://Assets/Paddle Sprites/mage_hooked_paddle.png" id="17_qdkat"]
-[ext_resource type="PackedScene" uid="uid://cd43nun0sqm2d" path="res://Scenes/Score Menu/ScoreMenu.tscn" id="20_udh0u"]
 [ext_resource type="PackedScene" uid="uid://dla18tq3msimh" path="res://Scenes/Launcher/Launcher.tscn" id="20_udh0u"]
+[ext_resource type="PackedScene" uid="uid://cd43nun0sqm2d" path="res://Scenes/Score Menu/ScoreMenu.tscn" id="21_xggvw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w20t6"]
 size = Vector2(1819, 43)
@@ -169,16 +169,17 @@ polygon = PackedVector2Array(-230.348, -235, -160.322, -204.124, -141.895, -197.
 texture = ExtResource("10_wgovn")
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Horn" type="StaticBody2D" parent="."]
 position = Vector2(645, 262)
 rotation = 1.5708
 scale = Vector2(0.890887, 0.877551)
+physics_material_override = ExtResource("10_qdkat")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Horn"]
 position = Vector2(-116.738, -64.9534)
 polygon = PackedVector2Array(179.596, 224.488, 189.699, 207.395, 197.556, 190.302, 202.046, 176.628, 207.658, 160.674, 206.536, 141.302, 202.046, 116.233, 196.433, 95.721, 189.699, 79.7675, 180.719, 63.814, 169.494, 50.1396, 150.412, 33.0466, 122.35, 33.0466, 55.0013, 34.1862, 4.4899, 28.4885, -34.7968, 11.3954, -60.6137, -13.6743, -72.961, -30.7673, -85.3082, -55.8372, -88.6756, -78.6278, -86.4307, -107.116, -81.9408, -131.046, -75.2059, -152.698, -62.8587, -170.93, -51.6339, -184.605, -35.9193, -194.86, -23.572, -202.837, -14.5922, -206.256, -6.73486, -207.395, 5.61237, -209.674, 20.2046, -214.232, 29.1844, -221.07, 23.572, -230.186, 11.2248, -238.163, -28.0619, -243.86, -111.125, -230.186, -142.555, -203.977, -175.106, -151.558, -200.923, -86.6046, -204.291, -6.83716, -182.964, 66.0931, -130.207, 144.721, -69.5936, 197.14, 28.0619, 241.581, 120.105, 241.581, 176.229, 227.907)
 
-[node name="DragonHornSprite" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D"]
+[node name="DragonHornSprite" type="Sprite2D" parent="Horn/CollisionPolygon2D"]
 texture = ExtResource("11_cv8e0")
 metadata/_edit_lock_ = true
 
@@ -270,5 +271,4 @@ position = Vector2(252, 1229)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_paddle_bound"]
 shape = SubResource("SegmentShape2D_hcu3t")
 
-[node name="ScoreMenu" parent="." instance=ExtResource("20_udh0u")]
-position = Vector2(86, 84)
+[node name="ScoreMenu" parent="." instance=ExtResource("21_xggvw")]
