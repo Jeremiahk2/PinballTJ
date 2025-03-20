@@ -1,11 +1,14 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+do State.speaker_changed.emit("None")
+...: The artifact glows dimly, but seems to brim with power, vibrating as Katrina picks it up. After a moment, it seems to settle down as it's glow brightens slightly.
+do State.speaker_changed.emit("Eryndor")
+Eryndor: As I expected. It seems I judged your capabilities accurately. Well, at least you have a more powerful artifact now.
+do State.speaker_changed.emit("None")
+...: Eryndor looks down at the artifact, as if judging it's power. He shrugs and closes the case.
+do State.speaker_changed.emit("Katrina")
+Katrina: As you expected? I'd say I did quite well. It's certainly more powerful than these baubles you've been bringing me.
+do State.speaker_changed.emit("None")
+...: He laughs, starting to walk back the way he came
+do State.speaker_changed.emit("Eryndor")
+Eryndor: Perhaps, though I'm certain there are more powerful ones out there. Rest assured, Your Majesty, I'm sure they are close at hand.
 => END
