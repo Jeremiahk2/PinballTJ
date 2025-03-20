@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=26 format=3 uid="uid://cjta7xgorpjno"]
 
 [ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
 [ext_resource type="PhysicsMaterial" uid="uid://dn7hrk7cl5j8r" path="res://Materials/WallMaterial.tres" id="2_aw1lf"]
@@ -19,15 +19,16 @@
 [ext_resource type="Texture2D" uid="uid://bkwm0m1igxmef" path="res://Assets/Currencies/without_shadow/41.png" id="15_epx8f"]
 [ext_resource type="Texture2D" uid="uid://cmnxlgleo2ahy" path="res://Assets/Structures/13.png" id="16_hcu3t"]
 [ext_resource type="Texture2D" uid="uid://cja3t4hnccrwu" path="res://Assets/Paddle Sprites/mage_hooked_paddle.png" id="17_qdkat"]
+[ext_resource type="PackedScene" uid="uid://cd43nun0sqm2d" path="res://Scenes/Score Menu/ScoreMenu.tscn" id="20_udh0u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w20t6"]
-size = Vector2(920, 39)
+size = Vector2(1819, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aw1lf"]
 size = Vector2(1406, 39.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s61s"]
-size = Vector2(851, 19)
+size = Vector2(1604, 63)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_epx8f"]
 a = Vector2(34, -4)
@@ -46,9 +47,8 @@ physics_material_override = ExtResource("2_aw1lf")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
-position = Vector2(1, 0.5)
+position = Vector2(47.5, 154.5)
 shape = SubResource("RectangleShape2D_w20t6")
-metadata/_edit_lock_ = true
 
 [node name="Border" type="Sprite2D" parent="BottomWall"]
 texture_repeat = 2
@@ -138,10 +138,10 @@ metadata/_edit_lock_ = true
 position = Vector2(-262, 370)
 
 [node name="LoseArea" type="Area2D" parent="."]
-position = Vector2(443, 1401)
+position = Vector2(455, 1540)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoseArea"]
-position = Vector2(17.5, 7.5)
+position = Vector2(16, 29.5)
 shape = SubResource("RectangleShape2D_5s61s")
 metadata/_edit_lock_ = true
 
@@ -212,7 +212,6 @@ physics_material_override = ExtResource("12_hcu3t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GoldBar"]
 position = Vector2(-27.4285, 4.8302)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-22.8572, 66.415, -98.2857, 42.2642, -80, -12.0754, 29.7142, -68.8302, 81.1428, -59.1698, 98.2857, -15.6981)
 
 [node name="GoldBarSprite" type="Sprite2D" parent="GoldBar/CollisionPolygon2D"]
@@ -265,3 +264,6 @@ position = Vector2(252, 1229)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left_paddle_bound"]
 shape = SubResource("SegmentShape2D_hcu3t")
+
+[node name="ScoreMenu" parent="." instance=ExtResource("20_udh0u")]
+position = Vector2(86, 84)
