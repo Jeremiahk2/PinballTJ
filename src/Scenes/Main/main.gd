@@ -3,8 +3,19 @@ extends Node2D
 var score = 0
 var lives = 2
 
+var introDialogue = load("res://Dialogue/intro.dialogue")
+
 func _ready():
 	$LoseArea.connect("body_entered", Callable(self, "on_lose_area_body_entered"))
+	if !State.intro_done:
+		State.intro_done = true;
+		DialogueManager.dialogue_ended.connect(startGame)
+		DialogueManager.show_dialogue_balloon(introDialogue, "start");
+	else:
+		startGame(null);
+
+func startGame(resource):
+	$BallSpawner.spawn();
 
 # when entering the LoseArea the ball needs to be respawned. can add a lives system later
 func on_lose_area_body_entered(body):
@@ -13,9 +24,6 @@ func on_lose_area_body_entered(body):
 		if lives > 0:
 			lives -= 1
 			print("lives left: ", lives)
-			call_deferred("_respawn_ball")
+			$BallSpawner.call_deferred("spawn")
 		else:
 			get_tree().change_scene_to_file.call_deferred(("res://Scenes/Main Menu/Main Menu.tscn"))
-
-func _respawn_ball():
-	$BallSpawner.ball = null

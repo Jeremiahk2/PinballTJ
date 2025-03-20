@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3qabvqjknofg"]
+[gd_scene load_steps=5 format=3 uid="uid://c3qabvqjknofg"]
 
 [ext_resource type="Texture2D" uid="uid://ct4cddak11do2" path="res://Assets/eryndor_demo_transparent.png" id="1_li4dj"]
 [ext_resource type="Script" uid="uid://7ix2moc6xk1b" path="res://Scenes/Characters/Characters.gd" id="1_tw3od"]
 [ext_resource type="Texture2D" uid="uid://c8lirluh1o7qv" path="res://Assets/Katrina.png" id="3_txa2x"]
+[ext_resource type="Texture2D" uid="uid://db4yu6kc73gta" path="res://Assets/Ball_Texture.png" id="4_ugiir"]
 
 [node name="Characters" type="Node2D"]
 
@@ -11,11 +12,19 @@ script = ExtResource("1_tw3od")
 
 [node name="Eryndor" type="Sprite2D" parent="Sprites"]
 unique_name_in_owner = true
-position = Vector2(243, 1235)
-scale = Vector2(0.538333, 0.532031)
+position = Vector2(640, 1254)
+scale = Vector2(0.788698, 0.767318)
 texture = ExtResource("1_li4dj")
 
 [node name="Katrina" type="Sprite2D" parent="Sprites"]
 unique_name_in_owner = true
-position = Vector2(267, 1190)
+position = Vector2(213, 1169)
+scale = Vector2(1.056, 1.074)
 texture = ExtResource("3_txa2x")
+
+[node name="Artifact" type="Sprite2D" parent="Sprites"]
+unique_name_in_owner = true
+z_index = 3
+position = Vector2(434, 1158)
+scale = Vector2(-0.795, 0.82)
+texture = ExtResource("4_ugiir")

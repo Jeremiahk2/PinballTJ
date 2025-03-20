@@ -1,12 +1,12 @@
 extends CanvasLayer
 
-@onready var characters = {"Katrina": %Katrina, "Eryndor": %Eryndor}
+@onready var characters = {"Katrina": %Katrina, "Eryndor": %Eryndor, "Artifact": %Artifact}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	State.speaker_changed.connect(_change_speaker) # connect speaker change function
 	# Initially hide all sprites
 	for sprite in characters:
-		characters[sprite].visible = true
+		characters[sprite].visible = false
 # Function to update the visibility of the sprites based on the current speaker
 func _update_sprites_visibility(speaker: String) -> void:
 	for sprite in characters:
