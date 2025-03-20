@@ -1,11 +1,19 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+do State.speaker_changed.emit("None")
+...: The orb hums with energy and emits a bright golden light. Katrina picks it up and the glow washes over her, enveloping her in the power. She turns to face Eryndor, who covers his eyes in shock.
+do State.speaker_changed.emit("Eryndor")
+Eryndor: How? How is it so powerful?! How are YOU so powerful?
+do State.speaker_changed.emit("Katrina")
+Katrina: Its my birthright to be powerful. A shame you won't ever know what that's like.
+do State.speaker_changed.emit("Eryndor")
+Eryndor: You must have used some trick... I'd never be able to...
+do State.speaker_changed.emit("Katrina")
+Katrina: Don't be a sore loser, Eryndor. You should be happy for me. I made your toy into something useful. And now, it's all mine.
+do State.speaker_changed.emit("Eryndor")
+Eryndor: ...
+Eryndor: ...Very well, Your Majesty. I suppose I'll have to try and find something even better.
+do State.speaker_changed.emit("None")
+...: Eryndor mumbles to himself as he walks away, an angry and irritated look on his face. Katrina looks down at the glowing artifact
+do State.speaker_changed.emit("Katrina")
+Katrina: I suppose I'll have to figure out how to use my new toy... And who to use it on.
 => END

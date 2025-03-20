@@ -1,11 +1,10 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+do State.speaker_changed.emit("None")
+...: The artifact fizzles as Katrina picks it up, vibrating slightly before resting in her hand. Eryndor puts a hand on her shoulder and smiles
+do State.speaker_changed.emit("Eryndor")
+Eryndor: That's quite a shame. Looks like you aren't as powerful as you pretend. But you have taught me quite a bit.
+do State.speaker_changed.emit("Eryndor")
+...: He turns and laughs, walking out the way he came.
+do State.speaker_changed.emit("Katrina")
+Katrina: Curse that man. He used me this time.
 => END
