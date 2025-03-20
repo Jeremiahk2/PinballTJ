@@ -1,9 +1,9 @@
 ~ start
 ...: Welcome to Pinball! In this story, you'll be taking the role of Katrina, Queen of The Kingdom, during her quest for power.
-...: You've been hard at work learning everything you can about magical artifacts, even letting Eryndor, the headmaster of Wyrmgate, carry on his research unimpeded.
+...: You've been hard at work learning everything you can about magical artifacts, even letting Eryndor, the new headmaster of Wyrmgate, carry on his research unimpeded.
 ...: Despite your differences, he's been rather... useful.
-...: At this hour, you're in your war room; A large chamber with various weaponry, maps, plans, and artifacts. You stand at the head of a large war table, with a map of the kingdom stretched across it's expanse.
-...: Looking out at the map of the kingdom, pondering where future, more powerful artifacts may be hidden...
+...: At this hour, you're in your war room; A large chamber with various weaponry, maps, plans, and artifacts. You stand at the head of a large war table, with a perfect map of the kingdom stretched across it's expanse.
+...: Looking out at the map of the kingdom, you ponder where more powerful artifacts may be hidden...
 do State.speaker_changed.emit("Katrina")
 Katrina (You): Curse these artifacts. They're useful, yes, but incredibly difficult to find. What's worse is I'm bound to the confines of my kingdom. And it seems all I get are these low-power artifacts!
 do State.speaker_changed.emit("None")
@@ -27,5 +27,9 @@ do State.speaker_changed.emit("None")
 ...: Inside the box is an artifact. The artifact's size is not impressive; powerful artifacts are usually quite a bit bigger, and more purposeful, but this one could fit in the palm of the hand
 do State.speaker_changed.emit("Artifact")
 ...: However, the artifact is a perfect sphere of gold, save for jeweled ornamentation on the exterior.
-do State.speaker_changed.emit("None")
+do State.speaker_changed.emit("Katrina")
+Katrina: This is... Certainly something. But are you sure it's powerful? It looks rather small.
+do State.speaker_changed.emit("Eryndor")
+Eryndor: According to my research, this artifact should be capable of growing with you. In fact, this table is perfect. We can start powering it up right now. 
+Eryndor: Use your magic to move the objects on the table. By doing so, you pass magic into the artifact. The more you pass in during this period, the more powerful it, and you, will become.
 => END
