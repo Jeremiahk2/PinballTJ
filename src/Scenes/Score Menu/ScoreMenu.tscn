@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd43nun0sqm2d"]
+
+[ext_resource type="Script" uid="uid://cqpvopcsplsb1" path="res://Scenes/Score Menu/score.gd" id="1_bifee"]
+
+[node name="ScoreMenu" type="Node2D"]
+
+[node name="Score" type="Label" parent="."]
+offset_right = 55.0
+offset_bottom = 40.0
+script = ExtResource("1_bifee")
