@@ -12,18 +12,21 @@ script = ExtResource("1_tw3od")
 
 [node name="Eryndor" type="Sprite2D" parent="Sprites"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(640, 1254)
 scale = Vector2(0.788698, 0.767318)
 texture = ExtResource("1_li4dj")
 
 [node name="Katrina" type="Sprite2D" parent="Sprites"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(213, 1169)
 scale = Vector2(1.056, 1.074)
 texture = ExtResource("3_txa2x")
 
 [node name="Artifact" type="Sprite2D" parent="Sprites"]
 unique_name_in_owner = true
+visible = false
 z_index = 3
 position = Vector2(434, 1158)
 scale = Vector2(-0.795, 0.82)
