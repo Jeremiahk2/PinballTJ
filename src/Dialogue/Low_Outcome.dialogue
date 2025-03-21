@@ -7,4 +7,5 @@ do State.speaker_changed.emit("Eryndor")
 ...: He turns and laughs, walking out the way he came.
 do State.speaker_changed.emit("Katrina")
 Katrina: Curse that man. He used me this time.
+do State.speaker_changed.emit("None")
 => END

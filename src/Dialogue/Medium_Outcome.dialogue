@@ -11,4 +11,5 @@ do State.speaker_changed.emit("None")
 ...: He laughs, starting to walk back the way he came
 do State.speaker_changed.emit("Eryndor")
 Eryndor: Perhaps, though I'm certain there are more powerful ones out there. Rest assured, Your Majesty, I'm sure they are close at hand.
+do State.speaker_changed.emit("None")
 => END

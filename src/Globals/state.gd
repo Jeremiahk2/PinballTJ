@@ -5,6 +5,7 @@ signal speaker_changed(speaker: String)
 var intro_done = false;
 
 var score = 0;
+var lives = 2;
 
 func _ready():
 	pass
