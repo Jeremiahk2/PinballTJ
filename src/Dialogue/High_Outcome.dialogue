@@ -16,4 +16,5 @@ do State.speaker_changed.emit("None")
 ...: Eryndor mumbles to himself as he walks away, an angry and irritated look on his face. Katrina looks down at the glowing artifact
 do State.speaker_changed.emit("Katrina")
 Katrina: I suppose I'll have to figure out how to use my new toy... And who to use it on.
+do State.speaker_changed.emit("None")
 => END
