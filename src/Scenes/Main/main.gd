@@ -1,8 +1,5 @@
 extends Node2D
 
-var lives = 2
-
-
 var low_ending = load("res://Dialogue/Low_Outcome.dialogue")
 var medium_ending = load("res://Dialogue/Medium_Outcome.dialogue")
 var high_ending = load("res://Dialogue/High_Outcome.dialogue")
@@ -28,9 +25,9 @@ func startGame(resource):
 func on_lose_area_body_entered(body):
 	if body.name == "Ball":
 		body.call_deferred("queue_free")
-		if lives > 0:
-			lives -= 1
-			print("lives left: ", lives)
+		if State.lives > 0:
+			State.lives -= 1
+			print("lives left: ", State.lives)
 			$BallSpawner.call_deferred("spawn")
 		else:
 			DialogueManager.dialogue_ended.disconnect(startGame);
@@ -43,5 +40,6 @@ func on_lose_area_body_entered(body):
 				DialogueManager.show_dialogue_balloon(low_ending, "start");
 func end_game(resource):
 	State.score = 0;
+	State.lives = 2;
 	get_tree().change_scene_to_file.call_deferred(("res://Scenes/Main Menu/Main Menu.tscn"))
 	
