@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqslnp1xrj6ea"]
+
+[ext_resource type="Texture2D" uid="uid://ce8xmrlb17e47" path="res://icon.svg" id="1_0q40n"]
+[ext_resource type="Script" uid="uid://dvbgt7sapnq3n" path="res://Scenes/Spawners/enemy.gd" id="2_vxqah"]
+[ext_resource type="PackedScene" uid="uid://dampsdf3e20qu" path="res://Scenes/Particles/EnemyParticle.tscn" id="3_vxqah"]
+
+[node name="EnemySpawner" type="Node2D"]
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(245, 191)
+texture = ExtResource("1_0q40n")
+script = ExtResource("2_vxqah")
+deathParticle = ExtResource("3_vxqah")
