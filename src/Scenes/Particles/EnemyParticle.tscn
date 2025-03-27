@@ -14,6 +14,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_1my8k"]
+width = 32
 curve = SubResource("Curve_k8ak4")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lbw27"]
@@ -23,15 +24,15 @@ spread = 180.0
 initial_velocity_min = 306.12
 initial_velocity_max = 693.88
 gravity = Vector3(0, 0, 0)
-scale_min = 20.0
+scale_min = 0.0
 scale_max = 20.0
 scale_curve = SubResource("CurveTexture_1my8k")
 color_ramp = SubResource("GradientTexture1D_5uaeo")
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
-self_modulate = Color(1, 0, 1, 1)
+self_modulate = Color(0.805238, 0.693124, 0, 1)
 emitting = false
-amount = 50
+amount = 60
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_lbw27")

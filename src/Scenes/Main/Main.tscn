@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cjta7xgorpjno"]
+[gd_scene load_steps=30 format=3 uid="uid://cjta7xgorpjno"]
 
 [ext_resource type="Script" uid="uid://d36c2pcgvi8xd" path="res://Scenes/Main/main.gd" id="1_o8wgc"]
 [ext_resource type="PhysicsMaterial" uid="uid://dn7hrk7cl5j8r" path="res://Materials/WallMaterial.tres" id="2_aw1lf"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dla18tq3msimh" path="res://Scenes/Launcher/Launcher.tscn" id="20_udh0u"]
 [ext_resource type="PackedScene" uid="uid://cd43nun0sqm2d" path="res://Scenes/Score Menu/ScoreMenu.tscn" id="21_xggvw"]
 [ext_resource type="Texture2D" uid="uid://ch48lqbli6o86" path="res://Assets/Structures/37.png" id="23_iwp64"]
+[ext_resource type="PackedScene" uid="uid://bqslnp1xrj6ea" path="res://Scenes/Spawners/CoinSpawner.tscn" id="24_4etfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w20t6"]
 size = Vector2(1819, 43)
@@ -288,3 +289,10 @@ polygon = PackedVector2Array(0, -244.093, -122.412, -50.6046, -139.493, -50.6046
 
 [node name="DragonGemSprite" type="Sprite2D" parent="DragonGem/CollisionPolygon2D"]
 texture = ExtResource("23_iwp64")
+
+[node name="CoinSpawner" parent="." instance=ExtResource("24_4etfk")]
+z_index = 4
+position = Vector2(229, 479)
+
+[node name="CoinSpawner2" parent="." instance=ExtResource("24_4etfk")]
+position = Vector2(72, 82)
