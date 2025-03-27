@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var coin_scene: PackedScene
-@export var spawn_interval: float = 2.0  # Time before spawning a new coin
+@export var spawn_interval: float = 5.0  # Time before spawning a new coin
 
 func _ready():
 	spawn_coin()
